@@ -53,6 +53,12 @@ Remove a word from the trie.
 trie.removeWord("name3");
 ```
 
+### Get All Words
+List all words in the word list.
+```js
+trie.getWords()
+```
+
 ### Get Prefix
 Search the trie for all words that begin with or match a given string. Returns an array of found strings.
 ```js

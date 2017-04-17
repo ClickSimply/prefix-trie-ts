@@ -14,7 +14,7 @@ export class Trie {
      */
     private _trie: any;
 
-    constructor(input: string[]) {
+    constructor(input?: string[]) {
         this._trie = Trie._create(input);
     }
 
@@ -40,6 +40,21 @@ export class Trie {
         return this;
     }
 
+    public getWords() {
+      return Trie._recursePrefix(this._trie, '');
+    }
+
+    public getPrefix(strPrefix: string) {
+        strPrefix = strPrefix.toLowerCase();
+        if (!this._isPrefix(strPrefix)) {
+            return [];
+        }
+
+        const { prefixNode } = Trie._checkPrefix(this._trie, strPrefix);
+
+        return Trie._recursePrefix(prefixNode, strPrefix);
+    }
+
     /**
      * 
      * 
@@ -54,17 +69,6 @@ export class Trie {
         const { prefixFound } = Trie._checkPrefix(this._trie, prefix);
 
         return prefixFound;
-    }
-
-    public getPrefix(strPrefix: string) {
-        strPrefix = strPrefix.toLowerCase();
-        if (!this._isPrefix(strPrefix)) {
-            return [];
-        }
-
-        const { prefixNode } = Trie._checkPrefix(this._trie, strPrefix);
-
-        return Trie._recursePrefix(prefixNode, strPrefix);
     }
 
     /**

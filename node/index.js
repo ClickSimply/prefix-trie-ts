@@ -22,9 +22,8 @@ var Trie = (function () {
         }
         return this;
     };
-    Trie.prototype._isPrefix = function (prefix) {
-        var prefixFound = Trie._checkPrefix(this._trie, prefix).prefixFound;
-        return prefixFound;
+    Trie.prototype.getWords = function () {
+        return Trie._recursePrefix(this._trie, '');
     };
     Trie.prototype.getPrefix = function (strPrefix) {
         strPrefix = strPrefix.toLowerCase();
@@ -33,6 +32,10 @@ var Trie = (function () {
         }
         var prefixNode = Trie._checkPrefix(this._trie, strPrefix).prefixNode;
         return Trie._recursePrefix(prefixNode, strPrefix);
+    };
+    Trie.prototype._isPrefix = function (prefix) {
+        var prefixFound = Trie._checkPrefix(this._trie, prefix).prefixFound;
+        return prefixFound;
     };
     Trie._append = function (trie, letter, index, array) {
         trie[letter] = trie[letter] || {};
