@@ -59,7 +59,7 @@ var Trie = (function () {
         };
     };
     Trie._create = function (input) {
-        var trie = input.reduce(function (accumulator, item) {
+        var trie = (input || []).reduce(function (accumulator, item) {
             item
                 .toLowerCase()
                 .split("")

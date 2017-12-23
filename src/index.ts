@@ -132,8 +132,8 @@ export class Trie {
      * @memberOf Trie
      */
     private static _create(input) {
-
-        const trie = input.reduce((accumulator, item) => {
+        
+        const trie = (input || []).reduce((accumulator, item) => {
             item
                 .toLowerCase()
                 .split("")

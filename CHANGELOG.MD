@@ -1,3 +1,6 @@
+#[0.0.3] 12-23-2017
+- Empty array is no longer required to initilize a new trie object.
+
 #[0.0.2] 4-17-2017
 - Restored `getWords` method.
 
