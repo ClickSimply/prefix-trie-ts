@@ -1,3 +1,6 @@
+#[0.0.4] 3-30-2018
+- You can now export and import Trie indexes.
+
 #[0.0.3] 12-23-2017
 - Empty array is no longer required to initilize a new trie object.
 

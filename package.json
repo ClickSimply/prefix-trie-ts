@@ -1,6 +1,6 @@
 {
     "name": "prefix-trie-ts",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
     "main": "node/index.js",
     "scripts": {

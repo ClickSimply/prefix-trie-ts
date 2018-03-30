@@ -18,6 +18,14 @@ export class Trie {
         this._trie = Trie._create(input);
     }
 
+    public getIndex() {
+        return this._trie;
+    }
+
+    public setIndex(trie: any) {
+        this._trie = trie;
+    }
+
     public addWord(word: string) {
 
         const reducer = (previousValue: any, currentValue: string, currentIndex: number, array: string[]) => {

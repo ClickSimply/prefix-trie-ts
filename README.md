@@ -64,3 +64,13 @@ Search the trie for all words that begin with or match a given string. Returns a
 ```js
 trie.getPrefix("jo")
 ```
+
+### Export Trie Index
+```js
+let exported = trie.getIndex();
+```
+
+### Import Trie Index
+```js
+trie.setIndex(indexJSON);
+```

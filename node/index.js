@@ -7,6 +7,12 @@ var Trie = (function () {
     function Trie(input) {
         this._trie = Trie._create(input);
     }
+    Trie.prototype.getIndex = function () {
+        return this._trie;
+    };
+    Trie.prototype.setIndex = function (trie) {
+        this._trie = trie;
+    };
     Trie.prototype.addWord = function (word) {
         var reducer = function (previousValue, currentValue, currentIndex, array) {
             return Trie._append(previousValue, currentValue, currentIndex, array);
